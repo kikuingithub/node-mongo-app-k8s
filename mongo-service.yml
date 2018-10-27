@@ -6,9 +6,10 @@ metadata:
     name: mongo-service
     app: node-mongo-app
 spec:
-  
+
   ports:
     - port: 27017
       targetPort: 27017
   selector:
     appName: node-mongo-app
+    tier: backend
