@@ -25,4 +25,4 @@ spec:
                 
           volumes:
                - name: mongo-volume
-                hostPath: "/data/mongodb/db"  
+                 hostPath: "/data/mongodb/db"  
