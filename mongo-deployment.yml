@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mongo-deployment
+   labels:
+      appName: node-mongo-deployment
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+        appName: node-mongo-app
+   template:
+      metadata:
+         name: mongo-pod
+         labels:
+            appName: node-mongo-app
+      spec:
+         containers:
+             - name: node-mongo
+               image: mongo
+               volumeMounts:
+                     - name: mongo-volume
+                       mountPath: "/data/db"
+          
+                
+         volumes:
+               -name: mongo-volume
+                hostPath: "/data/mongodb/db"  
