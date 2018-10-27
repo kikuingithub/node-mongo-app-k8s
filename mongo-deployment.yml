@@ -5,7 +5,7 @@ metadata:
    labels:
       appName: node-mongo-deployment
 spec:
-   replicas: 3
+   replicas: 1
    selector:
      matchLabels:
         appName: node-mongo-app
@@ -27,4 +27,4 @@ spec:
            - name: mongo-volume
              hostPath:
                path: "/data/mongodb/db"
-               type: Directory
+               type: DirectoryOrCreate
