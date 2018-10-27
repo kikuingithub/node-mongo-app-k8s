@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: node-mongo-deployment
+   name: node-app-deployment
    labels:
       appName: node-mongo-app
 spec:
-   replicas: 1
+   replicas: 3
    selector:
      matchLabels:
         appName: node-mongo-app
@@ -18,5 +18,7 @@ spec:
          containers:
              - name: node-mongo
                image: kikuindocker/node-mongo-app
-                
+               ports:
+                -  containerPort: 3000
+
 
