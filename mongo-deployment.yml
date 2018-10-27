@@ -5,7 +5,7 @@ metadata:
    labels:
       appName: node-mongo-deployment
 spec:
-   replicas: 1
+   replicas: 3
    selector:
      matchLabels:
         appName: node-mongo-app
@@ -25,4 +25,6 @@ spec:
                  - containerPort: 27017   
         volumes:
            - name: mongo-volume
-             emptyDir: {}
+             hostPath:
+               path: "/data/mongodb/db"
+               type: Directory
