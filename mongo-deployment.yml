@@ -15,14 +15,13 @@ spec:
          labels:
             appName: node-mongo-app
       spec:
-         containers:
+        containers:
              - name: node-mongo
                image: mongo
                volumeMounts:
                      - name: mongo-volume
                        mountPath: "/data/db"
-          
-                
-          volumes:
-               - name: mongo-volume
-                 emptyDir: {}
+                   
+        volumes:
+           - name: mongo-volume
+             emptyDir: {}
