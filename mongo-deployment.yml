@@ -27,5 +27,5 @@ spec:
         volumes:
            - name: mongo-volume
              hostPath:
-               path: "/data/mongodb/db"
+               path: "/usr/mongodb/db"
                type: DirectoryOrCreate
