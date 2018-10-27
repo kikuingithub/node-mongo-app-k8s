@@ -19,9 +19,10 @@ spec:
              - name: node-mongo
                image: mongo
                volumeMounts:
-                     - name: mongo-volume
-                       mountPath: "/data/db"
-                   
+                 - name: mongo-volume
+                   mountPath: "/data/db"
+               ports:
+                 - containerPort: 27017   
         volumes:
            - name: mongo-volume
              emptyDir: {}

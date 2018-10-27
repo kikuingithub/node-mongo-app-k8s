@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: mongo
   labels:
     name: mongo-service
     app: node-mongo-app
 spec:
+  type: LoadBalanacer
   ports:
     - port: 27017
       targetPort: 27017
